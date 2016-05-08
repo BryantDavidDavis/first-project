@@ -26,4 +26,16 @@ class HomeController @Inject() extends Controller {
     3 + 3
   }
 
+  def upper(word: String) = Action {
+    Ok("Got request for word [" + word + "], and made it uppercase [" + word.toUpperCase() + "]")
+  }
+
+  def mapWord(word: String) = Action {
+    Ok("mapped the word to this: [" + mapMe(word) + "]")
+  }
+
+  def mapMe(word: String) : String = {
+    word.map(_.toUpper)
+  }
+
 }
